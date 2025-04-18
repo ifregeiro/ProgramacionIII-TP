@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../TP1/img/Logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main> 
+        <section id="home" class="home-section"> <!-- HOME --> <!-- Agregar IMG (ya hecho en .css) -->
+            <div class="contenido-home">
+              <h2>Bienvenidos a TechNova Solutions</h2>
+              <p>
+                En <strong>TechNova Solutions</strong>, somos apasionados por la innovación tecnológica y el desarrollo de soluciones digitales que impulsan el futuro. Nos especializamos en ofrecer servicios de calidad en desarrollo web, diseño UX/UI, automatización de procesos y consultoría tecnológica para empresas que buscan crecer en un mundo cada vez más digital.
+              </p>
+  
+              <h3>Nuestra Misión</h3>
+              <p>
+                Nuestra misión es <strong>brindar soluciones tecnológicas creativas, eficientes y personalizadas</strong> que transformen ideas en realidades funcionales. Creemos que la tecnología bien aplicada puede marcar la diferencia en cualquier proyecto, y trabajamos día a día para acompañar a nuestros clientes en su evolución digital, con compromiso, profesionalismo y pasión por lo que hacemos.
+              </p>
+            </div>
+          </section>
+
+        <section id="servicios">    <!-- SERVICIOS -->
+            <h2>Nuestros Servicios</h2>
+            <div class="cards-container">
+                <div class="card slide-left">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios personalizados y adaptables.</p>
+                </div>
+                <div class="card slide-right">
+                    <h3>Diseño UX/UI</h3>
+                    <p>Interfaces centradas en la experiencia del usuario.</p>
+                </div>
+                <!-- Más Tarjetas (Mínimo 6) -->
+            </div>
+        </section>
+
+        <section id="galeria">      <!-- GALERÍA -->
+            <h2>Galería</h2>
+            <div class="galeria-grid">
+                <img src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+                <img src="img/6.jpg" alt="">
+                <img src="img/7.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="contacto">     <!-- CONTACTO -->
+            <h2>Contacto</h2>
+            <form>
+                <label>Nombre: <input type="text" name="nombre"></label>
+                <label>Email: <input type="email" name="email"></label>
+                <label>Teléfono: <input type="tel" name="telefono"></label>
+                <label>Comentarios: <textarea name="comentarios"></textarea></label>
+                <label>Interés:
+                    <select name="interes">
+                        <option value="">Seleccionar...</option>
+                        <option value="web">Web</option>
+                        <option value="diseño">Diseño</option>
+                    </select>
+                </label>
+                <label><input type="checkbox" name="acepto"> Acepto términos</label>
+                <div>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Resetear</button>
+                </div>
+            </form>            
+        </section>
+    </main>
+
+    <footer>
+        <p>© TechNova Solutions - 2025</p>
+        <div class="iconos">
+            <a href="https://github.com"><img src="img/github.png" alt="GitHub"></a>
+            <a href="https://linkedin.com"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
