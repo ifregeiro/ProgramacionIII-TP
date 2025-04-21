@@ -3,7 +3,6 @@
     --primario: #58a6ff;
     --secundario: #161b22;
     --texto: #c9d1d9;
-    --acento: #f778ba;
 }
 
 body {
@@ -12,7 +11,7 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: var(--fondo);
-    color: var(--fondo);
+    color: var(--texto);
 }
 
 a {
@@ -21,7 +20,8 @@ a {
 }
 
 .navbar {
-    background-color: var(--primario);
+    background-color: var(--secundario);
+    color: var(--texto);
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -44,7 +44,7 @@ footer {
 
 #home {
     background-color: var(--fondo);
-    background-image: url('../img/Logo.png');
+    background-image: url('../img/Logo2.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,10 +95,11 @@ footer {
 }
 
 /* Servicios */
-
+  
 #servicios {
     padding: 2rem;
     background-color: var(--fondo);
+    color: var(--texto);
     text-align: center;
 }
 
@@ -113,18 +114,55 @@ footer {
     background-color: var(--primario);
     border-radius: 16px;
     width: 250px;
-    height: 300px;
+    height: 100%;
     padding: 1rem;
     color: var(--texto);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     transition: transform 0.3s;
     opacity: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: var(--texto);
+}
+
+.card p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btn-servicio {
+    margin-top: auto;
+    padding: 6px 12px;
+    background-color: var(--secundario);
+    color: var(--texto);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-servicio:hover {
+    background-color:var(--fondo);
 }
 
 /* Animaciones */
