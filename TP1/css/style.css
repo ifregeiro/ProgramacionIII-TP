@@ -4,7 +4,6 @@
     --secundario: #161b22;
     --texto: #c9d1d9;
     --acento: #f778ba;
-
 }
 
 body {
@@ -37,7 +36,7 @@ footer {
 }
 
 .iconos img {
-    width: 24px;
+    width: 30px;
     margin: 0 8px;
 }
 
@@ -45,29 +44,37 @@ footer {
 
 #home {
     background-color: var(--fondo);
-    background-image: url('../img/'); /* Agregar IMG Home */
-    background-size: cover;
+    background-image: url('../img/Logo.png');
+    background-size: contain;
     background-position: center;
-    height: 420px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #home h1 {
     font-size: 3rem;
 }
 
-.home-section {
-    padding: 60px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
 .contenido-home {
     max-width: 800px;
     margin: 0 auto;
     color: var(--texto);
+    background-color: rgba(13, 17, 23, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.home-section {
+    padding: 60px 20px;
+    background-color: transparent;
+    text-align: center;
 }
 
 .home-section h2 {
@@ -143,7 +150,7 @@ footer {
 /* Galeria */
 
 #galeria {
-    padding: 2rem;
+    padding: 2rem 5rem;
     background-color: var(--fondo);
     color: var(--texto);
     text-align: center;
@@ -151,14 +158,25 @@ footer {
 
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+    gap: 1.5rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .galeria-grid img {
     width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: var(--secundario);
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    padding: 5px;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.50); /* efecto zoom */
 }
 
 /* Contacto */
