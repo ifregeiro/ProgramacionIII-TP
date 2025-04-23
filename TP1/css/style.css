@@ -5,6 +5,13 @@
     --texto: #c9d1d9;
 }
 
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
@@ -12,6 +19,12 @@ body {
     font-style: normal;
     background-color: var(--fondo);
     color: var(--texto);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -28,11 +41,19 @@ a {
     padding: 1rem;
 }
 
+.navbar a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--primario);
+}
+
 footer {
     background-color: var(--primario);
     color: var(--fondo);
     text-align: center;
     padding: 1rem;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .iconos img {

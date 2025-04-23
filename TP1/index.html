@@ -9,21 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>TechNova Solutions - Home</title>
 </head>
 
 <body>
 
     <header>
         <nav class="navbar">        <!-- NAVBAR -->
-            <a href="#home">Home</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#galeria">Galería</a>
-            <a href="#contacto">Contacto</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="html/servicios.html">Servicios</a>
+            <a href="html/galeria.html">Galería</a>
+            <a href="html/contacto.html">Contacto</a>
         </nav>
     </header>
 
     <main> 
-        <section id="home" class="home-section">    <!-- HOME -->
+        <section id="home" class="home-section visible">    <!-- HOME -->
             <div class="contenido-home">
               <h2>Bienvenidos a TechNova Solutions</h2>
               <p>
@@ -35,91 +36,6 @@
                 Nuestra misión es <strong>brindar soluciones tecnológicas creativas, eficientes y personalizadas</strong> que transformen ideas en realidades funcionales. Creemos que la tecnología bien aplicada puede marcar la diferencia en cualquier proyecto, y trabajamos día a día para acompañar a nuestros clientes en su evolución digital, con compromiso, profesionalismo y pasión por lo que hacemos.
               </p>
             </div>
-          </section>
-
-          <section id="servicios">    <!-- SERVICIOS -->
-            <h2>Nuestros Servicios</h2>
-            <div class="cards-container">
-              
-              <div class="card slide-left">
-                <img src="img/Servicios/servicio1.jpg" alt="Diseño 1">
-                <h3>Diseño Web</h3>
-                <p>Creación de sitios modernos, rápidos y adaptables a cualquier dispositivo.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-              <div class="card slide-left">
-                <img src="img/Servicios/servicio2.png" alt="Diseño 2">
-                <h3>Diseño UX/UI</h3>
-                <p>Interfaces centradas en el usuario para mejorar la experiencia digital.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-              <div class="card slide-right">
-                <img src="img/Servicios/servicio3.jpg" alt="Diseño 3">
-                <h3>Branding</h3>
-                <p>Creación de identidad visual, logotipos y estilo para tu marca.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-              <div class="card slide-right">
-                <img src="img/Servicios/servicio4.png" alt="Diseño 4">
-                <h3>Automatización</h3>
-                <p>Soluciones para automatizar procesos y optimizar tu productividad.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-              <div class="card slide-left">
-                <img src="img/Servicios/servicio5.png" alt="Diseño 5">
-                <h3>E-commerce</h3>
-                <p>Desarrollo de tiendas online con pasarelas de pago seguras y escalables.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-              <div class="card slide-right">
-                <img src="img/Servicios/servicio6.png" alt="Diseño 6">
-                <h3>Consultoría</h3>
-                <p>Asesoramiento personalizado en estrategia digital y tecnología.</p>
-                <a href="#" class="btn-servicio">Más información</a>
-              </div>
-          
-            </div>
-          </section>
-          
-
-        <section id="galeria">      <!-- GALERÍA -->
-            <h2>Galería</h2>
-            <div class="galeria-grid">
-                <img src="img/Galeria/1.jpg" alt="1">
-                <img src="img/Galeria/2.jpg" alt="2">
-                <img src="img/Galeria/3.jpg" alt="3">
-                <img src="img/Galeria/4.jpg" alt="4">
-                <img src="img/Galeria/5.jpg" alt="5">
-                <img src="img/Galeria/6.jpg" alt="6">
-                <img src="img/Galeria/7.jpg" alt="7">
-            </div>
-        </section>
-
-        <section id="contacto">     <!-- CONTACTO -->
-            <h2>Contacto</h2>
-            <form>
-                <label>Nombre: <input type="text" name="nombre"></label>
-                <label>Email: <input type="email" name="email"></label>
-                <label>Teléfono: <input type="tel" name="telefono"></label>
-                <label>Comentarios: <textarea name="comentarios"></textarea></label>
-                <label>Interés:
-                    <select name="interes">
-                        <option value="">Seleccionar...</option>
-                        <option value="web">Web</option>
-                        <option value="diseño">Diseño</option>
-                    </select>
-                </label>
-                <label><input type="checkbox" name="acepto"> Acepto términos</label>
-                <div>
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Resetear</button>
-                </div>
-            </form>            
         </section>
     </main>
 
