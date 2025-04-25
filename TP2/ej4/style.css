@@ -1,0 +1,9 @@
+li {
+  cursor: pointer;
+  background-color: lightcoral;
+}
+
+.completado {
+  background-color: greenyellow;
+  cursor: default;
+}
