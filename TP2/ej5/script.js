@@ -2,6 +2,7 @@ const formulario = document.getElementById('formulario');
 const nombre = document.getElementById('nombre');
 const email = document.getElementById('email');
 const edad = document.getElementById('edad');
+const boton = document.getElementById('boton');
 
 const errorNombre = document.getElementById('error-nombre');
 const errorEmail = document.getElementById('error-email');
@@ -22,7 +23,7 @@ function limpiarErrores() {
     errorEdad.textContent = '';
 }
 
-formulario.addEventListener('submit', function(event) {
+boton.addEventListener('click', function(event) {
     event.preventDefault();
     limpiarErrores();
     let esValido = true;
