@@ -10,7 +10,7 @@ const sequelize = new Sequelize({
 const connectDB = async () => {
   try {
     await sequelize.sync();
-    console.log('Base de datos conectada.');
+    console.log('Base de datos sqlite conectada.');
   } catch (error) {
     console.error('Error conectando a la base de datos:', error);
   }

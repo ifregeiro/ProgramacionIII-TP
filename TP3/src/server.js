@@ -18,10 +18,6 @@ class Server {
     
   }
 
-/*   cors () {
-    this.app.use(cors())
-  } */
-
   engine (template) {
      try{
        require.resolve(template);
@@ -35,7 +31,6 @@ class Server {
 
   }
   middleware () {
-    // this.app.use('/', express.static('public'))
     this.app.use(express.json())
     this.app.use(morgan('dev'))
   }
@@ -44,7 +39,6 @@ class Server {
     this.app.use('/api/v1/pacientes', rutaPacientes)
     this.app.use('/',home)
  
-    // aca van las otras rutas
 
   }
 

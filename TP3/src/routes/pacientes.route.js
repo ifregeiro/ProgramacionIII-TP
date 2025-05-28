@@ -7,6 +7,7 @@ rutaPacientes.post('/login',pacientesController.login)
 rutaPacientes.post('/',verifyTokenMiddleware,pacientesController.create);
 rutaPacientes.put('/:id',verifyTokenMiddleware,pacientesController.update);
 rutaPacientes.delete('/:id',verifyTokenMiddleware,pacientesController.delete);
+rutaPacientes.get('/:id',verifyTokenMiddleware,pacientesController.getPacienteById);
 
 //Otras rutas CRUD
 
