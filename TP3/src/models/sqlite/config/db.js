@@ -9,8 +9,9 @@ const sequelize = new Sequelize({
 
 const connectDB = async () => {
   try {
-    await sequelize.sync();
-    console.log('Base de datos sqlite conectada.');
+    // el parametro alter sirve para actualizar la base de datos por si hubo un cambio
+    await sequelize.sync({ alter: true });
+    console.log('Base de datos sqlite conectada y actualizada.');
   } catch (error) {
     console.error('Error conectando a la base de datos:', error);
   }
