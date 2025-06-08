@@ -2,8 +2,8 @@
 // controladores
 const home = async (req, res) => {
     res.render('index', { 
-        title: 'Mi aplicación Express',
-        message: '¡Hola desde el servidor!' ,
+        title: 'Clínica Salud+ - Gestión de Turnos',
+        message: 'Turnos y Pacientes',
         showFeatures: true,
         features: [
             'Descripción de la característica 1' ,

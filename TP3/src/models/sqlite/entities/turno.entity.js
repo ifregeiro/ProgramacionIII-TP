@@ -28,3 +28,15 @@ Paciente.hasMany(Turno, {
 });
 
 module.exports = { Turno };
+
+Turno.belongsTo(Paciente, {
+  foreignKey: 'pacienteId',
+  onDelete: 'CASCADE',
+  as: 'paciente' // 👈 este alias es clave
+});
+
+Paciente.hasMany(Turno, {
+  foreignKey: 'pacienteId',
+  as: 'turnos'
+});
+// Esto asegura que al consultar Turno, puedas incluir Paciente y acceder a sus datos
