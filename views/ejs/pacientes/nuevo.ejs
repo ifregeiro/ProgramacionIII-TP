@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+
+<style>
+    :root{
+    --blanco: rgb(255, 255, 255);
+    --negro: rgb(34, 34, 34);
+    --magenta: rgb(149, 0, 154);
+    --medianoche: rgb(18, 13, 65);
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: var(--medianoche);
+    border-bottom: 3px solid var(--magenta);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  label{
+    color: var(--medianoche);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input{
+    color: var(--blanco);
+    background-color: var(--magenta);
+    border: 3px solid var(--magenta);
+    border-radius: 5px;
+  }
+
+  select{
+    color: var(--blanco);
+    background-color: var(--magenta);
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+  }
+
+  button{
+    color: white;
+    background-color: var(--magenta);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    
+  }
+
+  button:hover{
+    background: var(--medianoche);
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--magenta);
+  }
+</style>
+
+<body>
+  <h1><%= title %></h1>
+<form action="/pacientes/nuevo" method="POST">
+  <label for="name">Nombre:</label>
+  <input type="text" name="name" required /><br />
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" required /><br />
+
+  <button type="submit">Crear Paciente</button>
+</form>
+
+  <p><a href="/pacientes">Volver</a></p>
+</body>
+</html>

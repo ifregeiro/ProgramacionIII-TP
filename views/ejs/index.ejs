@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<style>
+    :root{
+        --blanco: rgb(255, 255, 255);
+        --negro: rgb(34, 34, 34);
+        --magenta: rgb(149, 0, 154);
+        --medianoche: rgb(18, 13, 65);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: var(--medianoche);
+      border-bottom: 3px solid var(--magenta);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 40px;
+      color: var(--medianoche);
+      text-align: center;
+      max-width: 600px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: var(--medianoche);
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    ul li {
+      background: var(--magenta);
+      flex: 1 1 45%; /* para que quepan dos por fila */
+      max-width: 250px;
+      padding: 15px 0;
+      border-radius: 6px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      box-sizing: border-box;
+    }
+    ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+      font-size: 1.1em;
+    }
+    ul li:hover {
+      background: var(--medianoche);
+    }
+    footer {
+      margin-top: auto;
+      font-size: 0.9em;
+      color: var(--magenta);
+      text-align: center;
+      border-top: 1px solid var(--negro);
+      padding-top: 15px;
+      width: 100%;
+      max-width: 600px;
+    }
+</style>
+
+<body>
+  <h1><%= title %></h1>
+  <p><%= message %></p>
+
+  <h2>Accesos rápidos:</h2>
+  <ul>
+    <li><a href="/turnos">Ver turnos</a></li>
+    <li><a href="/turnos/nuevo">Registrar nuevo turno</a></li>
+    <li><a href="/pacientes">Ver pacientes</a></li>
+    <li><a href="/pacientes/nuevo">Registrar nuevo paciente</a></li>
+  </ul>
+
+  <footer>
+    <p>© <%= new Date().getFullYear() %> Clínica Salud</p>
+  </footer>
+</body>
+</html>
