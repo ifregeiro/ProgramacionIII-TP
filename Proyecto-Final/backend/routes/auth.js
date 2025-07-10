@@ -2,7 +2,7 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const authController = require("../controllers/authController");
-const auth = require("../middleware/auth");
+const { authenticateToken } = require("../middleware/auth");
 
 const registerValidation = [
   body("mail")
@@ -27,6 +27,6 @@ const loginValidation = [
 router.post("/register", registerValidation, authController.register);
 router.post("/login", loginValidation, authController.login);
 router.post("/logout", authController.logout);
-router.get("/me", auth, authController.getProfile);
+router.get("/me", authenticateToken, authController.getProfile);
 
 module.exports = router;

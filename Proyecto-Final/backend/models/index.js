@@ -20,9 +20,21 @@ const sequelize = new Sequelize(
 );
 
 const User = require("./User")(sequelize);
+const Book = require("./Book")(sequelize);
+
+User.hasMany(Book, {
+  foreignKey: "userId",
+  as: "books"
+});
+
+Book.belongsTo(User, {
+  foreignKey: "userId",
+  as: "user"
+});
 
 module.exports = {
   sequelize,
   Sequelize,
-  User
+  User,
+  Book
 };
