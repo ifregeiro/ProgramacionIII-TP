@@ -10,8 +10,12 @@ const genreClassMap = {
 };
 const estados = ["leído", "leyendo", "por leer"];
 
-export function EditableRow({ book, setBooks, books }) {
-  const [form, setForm] = useState(book);
+export function EditableRow({ book, setBooks, books, onSave, onCancel }) {
+  const [form, setForm] = useState({
+    ...book,
+    generos: Array.isArray(book.generos) ? book.generos : 
+             (book.genero ? book.genero.split(',').map(g => g.trim()) : [])
+  });
   const [rating, setRating] = useState(book.calificacion || 0);
 
   const handleChange = (e) => {
@@ -25,10 +29,15 @@ export function EditableRow({ book, setBooks, books }) {
   };
 
   const handleSave = () => {
-    const updated = books.map(b => (
-      b.id === book.id ? { ...form, calificacion: rating, editando: false } : b
-    ));
-    setBooks(updated);
+    const bookToSave = { ...form, calificacion: rating };
+    if (onSave) {
+      onSave(bookToSave);
+    } else {
+      const updated = books.map(b => (
+        b.id === book.id ? { ...bookToSave, editando: false } : b
+      ));
+      setBooks(updated);
+    }
   };
 
   return (
@@ -78,24 +87,46 @@ export function EditableRow({ book, setBooks, books }) {
       </td>
       <td>
         <button className="save" onClick={handleSave}>Guardar</button>
+        {onCancel && (
+          <button 
+            onClick={onCancel} 
+            style={{ marginLeft: '0.5rem', backgroundColor: '#95a5a6' }}
+          >
+            Cancelar
+          </button>
+        )}
       </td>
     </tr>
   );
 }
 
-export function ReadOnlyRow({ book, setBooks }) {
+export function ReadOnlyRow({ book, setBooks, onEdit, onDelete }) {
   const handleEdit = () => {
-    setBooks(prev =>
-      prev.map(b => (b.id === book.id ? { ...b, editando: true } : b))
-    );
+    if (onEdit) {
+      onEdit();
+    } else {
+      setBooks(prev =>
+        prev.map(b => (b.id === book.id ? { ...b, editando: true } : b))
+      );
+    }
   };
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm(`¿Seguro que querés eliminar "${book.titulo}"?`);
-    if (confirmDelete) {
-      setBooks(prev => prev.filter(b => b.id !== book.id));
+    if (onDelete) {
+      const confirmDelete = window.confirm(`¿Seguro que querés eliminar "${book.titulo}"?`);
+      if (confirmDelete) {
+        onDelete();
+      }
+    } else {
+      const confirmDelete = window.confirm(`¿Seguro que querés eliminar "${book.titulo}"?`);
+      if (confirmDelete) {
+        setBooks(prev => prev.filter(b => b.id !== book.id));
+      }
     }
   };
+
+  const generos = Array.isArray(book.generos) ? book.generos : 
+                 (book.genero ? book.genero.split(',').map(g => g.trim()) : []);
 
   return (
     <tr>
@@ -104,14 +135,14 @@ export function ReadOnlyRow({ book, setBooks }) {
       <td>{book.editorial}</td>
       <td><span className={`tag ${book.tipo}`}>{book.tipo}</span></td>
       <td>
-        {book.generos.map(g => (
+        {generos.map(g => (
           <span key={g} className={`tag ${genreClassMap[g] || 'ficcion'}`}>{g}</span>
         ))}
       </td>
       <td>{book.estado}</td>
       <td>
         <span className="stars">
-          {'★'.repeat(book.calificacion)}{'☆'.repeat(5 - book.calificacion)}
+          {'★'.repeat(book.calificacion || 0)}{'☆'.repeat(5 - (book.calificacion || 0))}
         </span>
       </td>
       <td><div className="reseña">{book.resena}</div></td>
