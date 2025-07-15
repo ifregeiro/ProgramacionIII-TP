@@ -81,3 +81,19 @@ td input, td select, td textarea {
   height: 50px;
   cursor: pointer;
 }
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #2c2c2c;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
